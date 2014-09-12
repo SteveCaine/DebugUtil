@@ -28,7 +28,7 @@
 
 - (void)viewDidLoad {
 //	MyLog(@"\n%s", __FUNCTION__);
-	MyLog(@"\n%s for %s\n", __FUNCTION__, (SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(@"7.0") ? "iOS 7" : "iOS 6"));
+	MyLog(@"\n%s for iOS %@\n", __FUNCTION__, str_iOS_version());
 	[super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
 	self.navigationItem.leftBarButtonItem = self.editButtonItem;

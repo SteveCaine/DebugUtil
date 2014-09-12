@@ -26,10 +26,11 @@ extern "C" {
 	// ----------------------------------------------------------------------
 	NSString *str_AppName();
 	NSString *str_AppDisplayName();
+	NSString *str_iOS_version();
 	NSString *str_device_OS_UDID();
 	// ----------------------------------------------------------------------
-	NSString *str_Time(NSDate *date); // '09:28:38 AM'
-	NSString *str_Date(NSDate *date); // '01 Jun 2014'
+	NSString *str_logTime(NSDate *date); // '09:28:38 AM'
+	NSString *str_logDate(NSDate *date); // '01 Jun 2014'
 	// ----------------------------------------------------------------------
 	NSString *str_CGPoint(CGPoint p);
 	NSString *str_CGSize(CGSize s);

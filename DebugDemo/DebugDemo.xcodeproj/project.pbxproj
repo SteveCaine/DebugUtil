@@ -24,7 +24,7 @@
 		8E14B33C1971A9AB00A24CA3 /* DebugDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E14B33B1971A9AB00A24CA3 /* DebugDemoTests.m */; };
 		8EBF980E1971C9D30054EA82 /* Debug_iOS.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EBF980D1971C9D30054EA82 /* Debug_iOS.m */; };
 		8EBF98101971C9FB0054EA82 /* Debug_iOS.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8EBF980F1971C9FB0054EA82 /* Debug_iOS.cpp */; };
-		8EBF98121971CC540054EA82 /* README.txt in Resources */ = {isa = PBXBuildFile; fileRef = 8EBF98111971CC540054EA82 /* README.txt */; };
+		8EBF98121971CC540054EA82 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 8EBF98111971CC540054EA82 /* README.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,7 +62,7 @@
 		8EBF980C1971C9D30054EA82 /* Debug_iOS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Debug_iOS.h; sourceTree = "<group>"; };
 		8EBF980D1971C9D30054EA82 /* Debug_iOS.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Debug_iOS.m; sourceTree = "<group>"; };
 		8EBF980F1971C9FB0054EA82 /* Debug_iOS.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Debug_iOS.cpp; sourceTree = "<group>"; };
-		8EBF98111971CC540054EA82 /* README.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.txt; sourceTree = "<group>"; };
+		8EBF98111971CC540054EA82 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,7 +92,7 @@
 		8E14B3011971A9AB00A24CA3 = {
 			isa = PBXGroup;
 			children = (
-				8EBF98111971CC540054EA82 /* README.txt */,
+				8EBF98111971CC540054EA82 /* README.md */,
 				8EBF980B1971C9AF0054EA82 /* DebugUtil */,
 				8E14B3131971A9AB00A24CA3 /* DebugDemo */,
 				8E14B3351971A9AB00A24CA3 /* DebugDemoTests */,
@@ -255,7 +255,7 @@
 			files = (
 				8E14B3291971A9AB00A24CA3 /* Images.xcassets in Resources */,
 				8E14B3181971A9AB00A24CA3 /* InfoPlist.strings in Resources */,
-				8EBF98121971CC540054EA82 /* README.txt in Resources */,
+				8EBF98121971CC540054EA82 /* README.md in Resources */,
 				8E14B3211971A9AB00A24CA3 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

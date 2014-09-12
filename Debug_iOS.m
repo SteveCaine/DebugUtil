@@ -21,6 +21,9 @@ NSString *str_AppDisplayName() {
 	NSString *result = [[[NSBundle mainBundle] infoDictionary] objectForKey:key_CFBundleDisplayName];
 	return result;
 }
+NSString *str_iOS_version() {
+	return [[UIDevice currentDevice] systemVersion];
+}
 NSString *str_device_OS_UDID() {
 	NSMutableString *result = [NSMutableString string];
 	
@@ -36,7 +39,7 @@ NSString *str_device_OS_UDID() {
 		case UIUserInterfaceIdiomPhone: str_idiom = @"Phone";	break;
 		case UIUserInterfaceIdiomPad:	str_idiom = @"Pad";		break;
 		default:
-			str_idiom = [NSString stringWithFormat:@"??? (%i)", idiom];
+			str_idiom = [NSString stringWithFormat:@"??? (%i)", (int)idiom];
 			break;
 	}
 	[result appendFormat:@"\nname = '%@', idiom = '%@'", name, str_idiom];
@@ -50,7 +53,7 @@ NSString *str_device_OS_UDID() {
 // ----------------------------------------------------------------------
 #pragma mark -
 // ----------------------------------------------------------------------
-NSString *str_Time(NSDate *date) { // '09:28:38 AM'
+NSString *str_logTime(NSDate *date) { // '09:28:38 AM'
 	NSString *result = nil;
 	if (date) {
 		NSDateFormatter *timeFormatter = [[NSDateFormatter alloc] init];
@@ -63,7 +66,7 @@ NSString *str_Time(NSDate *date) { // '09:28:38 AM'
 	}
 	return result;
 }
-NSString *str_Date(NSDate *date) { // '01 Jun 2014'
+NSString *str_logDate(NSDate *date) { // '01 Jun 2014'
 	NSString *result = nil;
 	if (date) {
 		NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
