@@ -11,5 +11,5 @@ Also in this repository is a simple 'DebugDemo' app to demonstrate the use of th
 
 This code is distributed under the terms of the MIT license. See file "LICENSE" in this repository for details.
 
-Copyright (c) 2011-2014 Steve Caine.
+Copyright (c) 2011-2014 Steve Caine.<br>
 @SteveCaine on github.com
