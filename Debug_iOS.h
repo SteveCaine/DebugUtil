@@ -33,6 +33,9 @@ extern "C" {
 	NSString *str_logTime(NSDate *date); // '09:28:38 AM'
 	NSString *str_logDate(NSDate *date); // '01 Jun 2014'
 	// ----------------------------------------------------------------------
+	NSString *str_AppState(UIApplicationState state);
+	NSString *str_curAppState();
+	// ----------------------------------------------------------------------
 	NSString *str_CGPoint(CGPoint p);
 	NSString *str_CGSize(CGSize s);
 	NSString *str_CGRect(CGRect r);
@@ -45,6 +48,9 @@ extern "C" {
 	// ----------------------------------------------------------------------
 	void MyLog(NSString *format, ...);
 	// ----------------------------------------------------------------------
+	void d_AppState(UIApplicationState state, NSString *label);
+	void d_curAppState(NSString *label);
+	// ----------------------------------------------------------------------
 	void d_CGPoint(CGPoint p, NSString *label);
 	void d_CGSize(CGSize s, NSString *label);
 	void d_CGRect(CGRect r, NSString *label);
@@ -53,6 +59,8 @@ extern "C" {
 	// ----------------------------------------------------------------------
 #else
 #define MyLog(format, ...)
+#define d_AppState(s, label)
+#define d_curAppState(label)
 #define d_CGPoint(p, label)
 #define d_CGSize(s, label)
 #define d_CGRect(r, label)
