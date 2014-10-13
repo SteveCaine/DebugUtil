@@ -130,7 +130,10 @@ NSString *str_CLAuthorizationStatus(CLAuthorizationStatus status) {
 NSString *str_curCLAuthorizationStatus() {
 	return str_CLAuthorizationStatus([CLLocationManager authorizationStatus]);
 }
+// ----------------------------------------------------------------------
+
 #if USECUSTOMLOGS
+
 // ----------------------------------------------------------------------
 #pragma mark -
 // ----------------------------------------------------------------------

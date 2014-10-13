@@ -52,6 +52,20 @@ NSString *str_device_OS_UDID() {
 	return result;
 }
 // ----------------------------------------------------------------------
+NSString *str_AppPath() {
+	NSBundle *mailBundle = [NSBundle mainBundle];
+	NSString *resourcePath = [mailBundle resourcePath];
+	return resourcePath;
+}
+NSString *str_DocumentsPath() {
+	NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+	return [paths firstObject];
+}
+NSString *str_CachePath() {
+	NSArray *paths = NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES);
+	return [paths firstObject];
+}
+// ----------------------------------------------------------------------
 #pragma mark -
 // ----------------------------------------------------------------------
 NSString *str_logTime(NSDate *date) { // '09:28:38 AM'

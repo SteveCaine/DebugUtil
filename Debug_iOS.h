@@ -30,6 +30,10 @@ extern "C" {
 	NSString *str_iOS_version();
 	NSString *str_device_OS_UDID();
 	// ----------------------------------------------------------------------
+	NSString *str_AppPath();
+	NSString *str_DocumentsPath();
+	NSString *str_CachePath();
+	// ----------------------------------------------------------------------
 	NSString *str_logTime(NSDate *date); // '09:28:38 AM'
 	NSString *str_logDate(NSDate *date); // '01 Jun 2014'
 	// ----------------------------------------------------------------------
