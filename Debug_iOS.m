@@ -22,7 +22,7 @@ NSString *str_AppDisplayName() {
 	NSString *result = [[[NSBundle mainBundle] infoDictionary] objectForKey:key_CFBundleDisplayName];
 	return result;
 }
-NSString *str_iOS_version() {
+NSString *str_iOS_version() { // "7.1", "8.0", etc.
 	return [[UIDevice currentDevice] systemVersion];
 }
 NSString *str_device_OS_UDID() {
@@ -52,6 +52,20 @@ NSString *str_device_OS_UDID() {
 	return result;
 }
 // ----------------------------------------------------------------------
+NSString *str_AppPath() {
+	NSBundle *mailBundle = [NSBundle mainBundle];
+	NSString *resourcePath = [mailBundle resourcePath];
+	return resourcePath;
+}
+NSString *str_DocumentsPath() {
+	NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+	return [paths firstObject];
+}
+NSString *str_CachePath() {
+	NSArray *paths = NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES);
+	return [paths firstObject];
+}
+// ----------------------------------------------------------------------
 #pragma mark -
 // ----------------------------------------------------------------------
 NSString *str_logTime(NSDate *date) { // '09:28:38 AM'
@@ -79,6 +93,29 @@ NSString *str_logDate(NSDate *date) { // '01 Jun 2014'
 #endif
 	}
 	return result;
+}
+// ----------------------------------------------------------------------
+NSString *str_AppState(UIApplicationState state) {
+	NSString *result = nil;
+	switch (state) {
+		case UIApplicationStateActive:
+			result = @"active";
+			break;
+		case UIApplicationStateInactive:
+			result = @"inactive";
+			break;
+		case UIApplicationStateBackground:
+			result = @"background";
+			break;
+		default:
+			result = [NSString stringWithFormat:@"?state? = %i", (int) state];
+			break;
+	}
+	return result;
+}
+NSString *str_curAppState() {
+	UIApplication *app = [UIApplication sharedApplication];
+	return str_AppState(app.applicationState);
 }
 // ----------------------------------------------------------------------
 #pragma mark -
@@ -131,6 +168,14 @@ void MyLog(NSString *format, ...) {
 		[formattedString release];
 #endif
 	}
+}
+// ----------------------------------------------------------------------
+void d_AppState(UIApplicationState state, NSString *label) {
+	MyLog(@"%@%@", label, str_AppState(state));
+}
+void d_curAppState(NSString *label) {
+	UIApplication *app = [UIApplication sharedApplication];
+	d_AppState(app.applicationState, label);
 }
 // ----------------------------------------------------------------------
 #pragma mark -

@@ -2,6 +2,8 @@
 //	Debug_MapKit.h
 //	MapUtil
 //
+//	debug code for CoreLocation and MapKit
+//
 //	Created by Steve Caine on 05/13/14.
 //
 //	This code is distributed under the terms of the MIT license.
@@ -27,6 +29,11 @@ NSString *str_MKCoordinateRegion(MKCoordinateRegion r);
 // ----------------------------------------------------------------------
 NSString *str_CLPlacemark(CLPlacemark *p);
 // ----------------------------------------------------------------------
+NSString *str_CLError(CLError err);
+NSString *str_CLError_desc(CLError err, NSString **desc);
+NSString *str_CLAuthorizationStatus(CLAuthorizationStatus status);
+NSString *str_curCLAuthorizationStatus();
+// ----------------------------------------------------------------------
 
 #if USECUSTOMLOGS
 
@@ -41,6 +48,11 @@ void d_MKMapPoint(MKMapPoint p, NSString *label);
 void d_MKMapSize(MKMapSize s, NSString *label);
 void d_MKMapRect(MKMapRect r, NSString *label);
 // ----------------------------------------------------------------------
+void d_CLError(CLError err, NSString *label);
+void d_CLError_desc(CLError err, NSString *label);
+void d_CLAuthorizationStatus(CLAuthorizationStatus status, NSString *label);
+void d_curCLAuthorizationStatus(NSString *label);
+// ----------------------------------------------------------------------
 
 #else
 
@@ -51,5 +63,9 @@ void d_MKMapRect(MKMapRect r, NSString *label);
 #define d_MKMapPoint(p,l)
 #define d_MKMapSize(s,l)
 #define d_MKMapRect(r,l)
+#define d_CLError(e,l)
+#define d_CLError_desc(e,l)
+#define d_CLAuthorizationStatus(s,l)
+#define d_curCLAuthorizationStatus(l)
 
 #endif
