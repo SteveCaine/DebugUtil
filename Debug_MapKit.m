@@ -116,8 +116,12 @@ static NSString *str_status[] = {
 	@"undetermined",
 	@"restricted",
 	@"denied",
+#ifdef __IPHONE_8_0
 	@"authorized(always)",
 	@"authorized(in-use)"
+#else
+	@"authorized"
+#endif
 };
 NSUInteger num_status = sizeof(str_status)/sizeof(str_status[0]);
 // ----------------------------------------------------------------------
