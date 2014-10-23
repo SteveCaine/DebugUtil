@@ -73,8 +73,6 @@ NSString *str_CLPlacemark(CLPlacemark *p) {
 	return result;
 }
 // ----------------------------------------------------------------------
-// new code for iOS 8 location access logic
-// ----------------------------------------------------------------------
 static NSString *err_desc[][2] = {
 	{ @"kCLErrorLocationUnknown",					@"Location is currently unknown, but CL will keep trying" },
 	{ @"kCLErrorDenied",							@"Access to location or ranging has been denied by the user" },

@@ -29,8 +29,6 @@ NSString *str_MKCoordinateRegion(MKCoordinateRegion r);
 // ----------------------------------------------------------------------
 NSString *str_CLPlacemark(CLPlacemark *p);
 // ----------------------------------------------------------------------
-// new code for iOS 8 location access logic
-// ----------------------------------------------------------------------
 NSString *str_CLError(CLError err);
 NSString *str_CLError_desc(CLError err, NSString **desc);
 NSString *str_CLAuthorizationStatus(CLAuthorizationStatus status);
