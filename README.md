@@ -19,5 +19,5 @@ My other public repositories on GitHub use files in this repository, on the assu
 
 This code is distributed under the terms of the MIT license. See file "LICENSE" in this repository for details.
 
-Copyright (c) 2011-2014 Steve Caine.<br>
+Copyright (c) 2010-2014 Steve Caine.<br>
 @SteveCaine on github.com
