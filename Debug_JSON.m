@@ -58,14 +58,14 @@ static void str_types_tree(id node, NSMutableString *append, NSUInteger deep) {
 		
 		// next level is ...
 		if ([node isKindOfClass:[NSArray class]]) {
-			[append appendFormat:@"%@%@[%i]\n", indent, str_class, [(NSArray *)node count]];
+			[append appendFormat:@"%@%@[%i]\n", indent, str_class, (int)[(NSArray *)node count]];
 			for (id subnode in (NSArray *)node) {
 				str_types_tree(subnode, append, 1+deep);
 			}
 		}
 		else if ([node isKindOfClass:[NSDictionary class]]) {
 			NSArray *keys = [(NSDictionary *)node allKeys];
-			[append appendFormat:@"%@%@{%i}\n", indent, str_class, [keys count]];
+			[append appendFormat:@"%@%@{%i}\n", indent, str_class, (int)[keys count]];
 			for (NSString *key in keys) {
 				id subnode = [(NSDictionary *)node objectForKey:key];
 #if !CONFIG_justTypes
