@@ -17,11 +17,20 @@ typedef struct MapBounds {
 	double west;
 } MapBounds;
 
+extern const MapBounds MapBoundsNull; // = {0,0,0,0};
+
+// see comments in .m file
+BOOL MapBoundsIsNull( MapBounds bounds);
+BOOL MapBoundsIsEmpty(MapBounds bounds);
 BOOL MapBoundsIsValid(MapBounds bounds);
 
-BOOL GetBoundsFromArray(MapBounds *bounds, NSArray *array);
+MapBounds MapBoundsUnion(MapBounds b1, MapBounds b2);
 
-MapBounds boundsForArray(NSArray *array);
+//MapBounds MapBoundsIntersection(MapBounds b1, MapBounds b2);
+
+
+BOOL GetMapBoundsFromNSArray(MapBounds *bounds, NSArray *array);
+
 
 NSString *str_MapBounds(MapBounds bounds);
 
