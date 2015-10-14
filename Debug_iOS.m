@@ -155,7 +155,7 @@ void MyLog(NSString *format, ...) {
 	va_start(args, format);
 	
 	if ([format length]) {
-		// add a linebreak if we don't already have one
+		// add a linebreak if we don't already have one`
 		if ([format length] &&
 			[format characterAtIndex:[format length] - 1] != '\n')
 			format = [format stringByAppendingString:@"\n"];
@@ -199,6 +199,23 @@ void log_visibleRowsInTableView(UITableView *tableView) {
 		NSIndexPath	 *lastPath = [visibleRows objectAtIndex:[visibleRows count] - 1];
 		MyLog(@" FIRST VISIBLE ROW at [%i:%i]", firstPath.section, firstPath.row);
 		MyLog(@"  LAST VISIBLE ROW at [%i:%i]",	 lastPath.section,	lastPath.row);
+	}
+}
+// ----------------------------------------------------------------------
+void log_NSURLSessionDataTask(NSURLSessionDataTask *task, BOOL withHeaders) {
+	NSURLRequest *request = [task originalRequest];
+	NSURL *url = request.URL;
+	NSString *requestStr = [url absoluteString];
+	MyLog(@" request = '%@'", requestStr);
+	if (withHeaders) {
+		// log HTTP headers in request and response
+		MyLog(@"\n requestHeaders = %@\n", [request allHTTPHeaderFields]);
+
+		NSURLResponse *response = [task response];
+		if ([response respondsToSelector:@selector(allHeaderFields)]) {
+			NSDictionary *headers = [(NSHTTPURLResponse *)response allHeaderFields];
+			MyLog(@" responseHeaders = %@", headers);
+		}
 	}
 }
 // ----------------------------------------------------------------------

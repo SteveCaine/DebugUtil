@@ -59,7 +59,9 @@ extern "C" {
 	void d_CGSize(CGSize s, NSString *label);
 	void d_CGRect(CGRect r, NSString *label);
 	// ----------------------------------------------------------------------
-	void log_visibleCellsInTableView(UITableView *tableView);
+	void log_visibleRowsInTableView(UITableView *tableView);
+	// ----------------------------------------------------------------------
+	void log_NSURLSessionDataTask(NSURLSessionDataTask *task, BOOL withHeaders);
 	// ----------------------------------------------------------------------
 #else
 #define MyLog(format, ...)
