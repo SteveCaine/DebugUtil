@@ -13,12 +13,12 @@
 
 // ----------------------------------------------------------------------
 NSString *str_AppName() {
-	const NSString *key_CFBundleName = @"CFBundleName";
+	NSString * const key_CFBundleName = @"CFBundleName";
 	NSString *result = [[[NSBundle mainBundle] infoDictionary] objectForKey:key_CFBundleName];
 	return result;
 }
 NSString *str_AppDisplayName() {
-	const NSString *key_CFBundleDisplayName = @"CFBundleDisplayName";
+	NSString * const key_CFBundleDisplayName = @"CFBundleDisplayName";
 	NSString *result = [[[NSBundle mainBundle] infoDictionary] objectForKey:key_CFBundleDisplayName];
 	return result;
 }
