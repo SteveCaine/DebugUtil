@@ -71,6 +71,7 @@ extern "C" {
 #define d_CGSize(s, label)
 #define d_CGRect(r, label)
 #define log_visibleCellsInTableView(tableView)
+#define log_NSURLSessionDataTask(task,withHeaders)
 #endif // #if USECUSTOMLOGS
 	
 #endif // #ifdef __OBJC__
