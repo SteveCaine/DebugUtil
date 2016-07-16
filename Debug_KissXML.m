@@ -37,6 +37,7 @@ NSUInteger num_kinds = sizeof(kinds)/sizeof(kinds[0]);
 // ----------------------------------------------------------------------
 
 void d_DDXMLNode(DDXMLNode* node) {
+#if DEBUG
 	if (node) {
 		static int deep = 0;
 		
@@ -57,6 +58,7 @@ void d_DDXMLNode(DDXMLNode* node) {
 		}
 		
 	}
+#endif
 }
 
 // ----------------------------------------------------------------------
