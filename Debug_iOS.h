@@ -9,6 +9,8 @@
 //	Copyright (c) 2011-2014 Steve Caine.
 //
 
+#import <UIKit/UIKit.h>
+
 #ifdef	DEBUG
 #define USECUSTOMLOGS 1
 #endif

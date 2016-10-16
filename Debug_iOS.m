@@ -75,9 +75,6 @@ NSString *str_logTime(NSDate *date) { // '09:28:38 AM'
 		NSString *timeFormat = @"hh:mm:ss a";
 		[timeFormatter setDateFormat:timeFormat];
 		result = [timeFormatter stringFromDate:date];
-#if !__has_feature(objc_arc)
-		[timeFormatter release];
-#endif
 	}
 	return result;
 }

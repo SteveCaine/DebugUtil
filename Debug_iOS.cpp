@@ -9,8 +9,6 @@
 //	Copyright (c) 2011-2014 Steve Caine.
 //
 
-#include "Debug_iOS.h"
-
 #include <string>
 using namespace std;
 
