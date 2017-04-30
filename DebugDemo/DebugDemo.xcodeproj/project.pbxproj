@@ -22,6 +22,7 @@
 		8E14B3321971A9AB00A24CA3 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E14B3111971A9AB00A24CA3 /* UIKit.framework */; };
 		8E14B33A1971A9AB00A24CA3 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8E14B3381971A9AB00A24CA3 /* InfoPlist.strings */; };
 		8E14B33C1971A9AB00A24CA3 /* DebugDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E14B33B1971A9AB00A24CA3 /* DebugDemoTests.m */; };
+		8E6263C91EB27B7100B374F4 /* Debug_ObjC.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E6263C81EB27B7100B374F4 /* Debug_ObjC.m */; };
 		8EBF980E1971C9D30054EA82 /* Debug_iOS.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EBF980D1971C9D30054EA82 /* Debug_iOS.m */; };
 		8EBF98101971C9FB0054EA82 /* Debug_iOS.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8EBF980F1971C9FB0054EA82 /* Debug_iOS.cpp */; };
 		8EBF98121971CC540054EA82 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 8EBF98111971CC540054EA82 /* README.md */; };
@@ -59,6 +60,9 @@
 		8E14B3371971A9AB00A24CA3 /* DebugDemoTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "DebugDemoTests-Info.plist"; sourceTree = "<group>"; };
 		8E14B3391971A9AB00A24CA3 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		8E14B33B1971A9AB00A24CA3 /* DebugDemoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DebugDemoTests.m; sourceTree = "<group>"; };
+		8E6263C71EB27B7100B374F4 /* Debug_ObjC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Debug_ObjC.h; sourceTree = "<group>"; };
+		8E6263C81EB27B7100B374F4 /* Debug_ObjC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Debug_ObjC.m; sourceTree = "<group>"; };
+		8E8B14D31EAD343A00F57B8D /* Debug_iOS.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Debug_iOS.hpp; sourceTree = "<group>"; };
 		8EBF980C1971C9D30054EA82 /* Debug_iOS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Debug_iOS.h; sourceTree = "<group>"; };
 		8EBF980D1971C9D30054EA82 /* Debug_iOS.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Debug_iOS.m; sourceTree = "<group>"; };
 		8EBF980F1971C9FB0054EA82 /* Debug_iOS.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Debug_iOS.cpp; sourceTree = "<group>"; };
@@ -169,8 +173,11 @@
 		8EBF980B1971C9AF0054EA82 /* DebugUtil */ = {
 			isa = PBXGroup;
 			children = (
+				8E6263C71EB27B7100B374F4 /* Debug_ObjC.h */,
+				8E6263C81EB27B7100B374F4 /* Debug_ObjC.m */,
 				8EBF980C1971C9D30054EA82 /* Debug_iOS.h */,
 				8EBF980D1971C9D30054EA82 /* Debug_iOS.m */,
+				8E8B14D31EAD343A00F57B8D /* Debug_iOS.hpp */,
 				8EBF980F1971C9FB0054EA82 /* Debug_iOS.cpp */,
 			);
 			name = DebugUtil;
@@ -221,9 +228,12 @@
 		8E14B3021971A9AB00A24CA3 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0510;
+				LastUpgradeCheck = 0730;
 				ORGANIZATIONNAME = SteveCaine;
 				TargetAttributes = {
+					8E14B3091971A9AB00A24CA3 = {
+						DevelopmentTeam = 4H8K8Q8AET;
+					};
 					8E14B32D1971A9AB00A24CA3 = {
 						TestTargetID = 8E14B3091971A9AB00A24CA3;
 					};
@@ -278,6 +288,7 @@
 				8EBF980E1971C9D30054EA82 /* Debug_iOS.m in Sources */,
 				8EBF98101971C9FB0054EA82 /* Debug_iOS.cpp in Sources */,
 				8E14B31E1971A9AB00A24CA3 /* AppDelegate.m in Sources */,
+				8E6263C91EB27B7100B374F4 /* Debug_ObjC.m in Sources */,
 				8E14B3241971A9AB00A24CA3 /* MasterViewController.m in Sources */,
 				8E14B31A1971A9AB00A24CA3 /* main.m in Sources */,
 				8E14B3271971A9AB00A24CA3 /* DetailViewController.m in Sources */,
@@ -348,6 +359,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -405,11 +417,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "DebugDemo/DebugDemo-Prefix.pch";
 				INFOPLIST_FILE = "DebugDemo/DebugDemo-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.example.SteveCaine.${PRODUCT_NAME}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -419,11 +435,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "DebugDemo/DebugDemo-Prefix.pch";
 				INFOPLIST_FILE = "DebugDemo/DebugDemo-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.example.SteveCaine.${PRODUCT_NAME}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -444,6 +464,7 @@
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = "DebugDemoTests/DebugDemoTests-Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.SteveCaine.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
@@ -462,6 +483,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "DebugDemo/DebugDemo-Prefix.pch";
 				INFOPLIST_FILE = "DebugDemoTests/DebugDemoTests-Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.SteveCaine.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;

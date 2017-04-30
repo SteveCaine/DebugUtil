@@ -47,8 +47,8 @@
 	if (!_objects) {
 		_objects = [[NSMutableArray alloc] init];
 	}
-//	[_objects insertObject:[NSDate date] atIndex:0];
-	NSDate *now = [NSDate date];
+//	[_objects insertObject:NSDate.date atIndex:0];
+	NSDate *now = NSDate.date;
 	MyLog(@" adding row for date '%@'", now);
 	[_objects insertObject:now atIndex:0];
 	NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:0];
@@ -69,7 +69,7 @@
 	UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
 
 	NSDate *object = _objects[indexPath.row];
-	cell.textLabel.text = [object description];
+	cell.textLabel.text = object.description;
 	return cell;
 }
 
@@ -102,15 +102,15 @@
 */
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-	MyLog(@"\n%s '%@'", __FUNCTION__, [segue identifier]);
-	if ([[segue identifier] isEqualToString:@"showDetail"]) {
+	MyLog(@"\n%s '%@'", __FUNCTION__, segue.identifier);
+	if ([segue.identifier isEqualToString:@"showDetail"]) {
 		
 		// SPC 07-12-14 set 'back' button title to something short
 		self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Master" style:UIBarButtonItemStylePlain target:nil action:nil ];
 		
 		NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
 		NSDate *object = _objects[indexPath.row];
-		[[segue destinationViewController] setDetailItem:object];
+		[segue.destinationViewController setDetailItem:object];
 	}
 }
 

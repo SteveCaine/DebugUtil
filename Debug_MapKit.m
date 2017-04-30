@@ -135,7 +135,17 @@ NSString *str_curCLAuthorizationStatus() {
 	return str_CLAuthorizationStatus([CLLocationManager authorizationStatus]);
 }
 // ----------------------------------------------------------------------
-
+NSString *str_CLLocation(CLLocation *location) {
+	NSString *result = nil;
+	if (location) {
+		CLLocationCoordinate2D c = location.coordinate;
+		NSString *str_latitude  = [NSString stringWithFormat:@"%3f %s", fabs(c.latitude),  (c.latitude  > 0 ? "N" : "S")];
+		NSString *str_longitude = [NSString stringWithFormat:@"%4f %s", fabs(c.longitude), (c.longitude > 0 ? "E" : "W")];
+		result = [NSString stringWithFormat:@"%@, %@", str_latitude, str_longitude];
+	}
+	return result;
+}
+// ----------------------------------------------------------------------
 #if USECUSTOMLOGS
 
 // ----------------------------------------------------------------------

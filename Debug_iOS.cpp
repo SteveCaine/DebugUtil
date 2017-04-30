@@ -6,8 +6,10 @@
 //
 //	This code is distributed under the terms of the MIT license.
 //
-//	Copyright (c) 2011-2014 Steve Caine.
+//	Copyright (c) 2011-2017 Steve Caine.
 //
+
+#include "Debug_iOS.hpp"
 
 #include <string>
 using namespace std;

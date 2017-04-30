@@ -8,7 +8,7 @@
 //
 //	This code is distributed under the terms of the MIT license.
 //
-//	Copyright (c) 2014 Steve Caine.
+//	Copyright (c) 2014-2017 Steve Caine.
 //
 
 #import <Foundation/Foundation.h>
@@ -33,6 +33,7 @@ NSString *str_CLError(CLError err);
 NSString *str_CLError_desc(CLError err, NSString **desc);
 NSString *str_CLAuthorizationStatus(CLAuthorizationStatus status);
 NSString *str_curCLAuthorizationStatus();
+NSString *str_CLLocation(CLLocation *location);
 // ----------------------------------------------------------------------
 
 #if USECUSTOMLOGS
