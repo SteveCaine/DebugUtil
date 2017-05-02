@@ -55,7 +55,7 @@ static void str_types_tree(id node, NSMutableString *append, NSUInteger deep) {
 		NSString *indent = str_spaces(2 * deep); // 2 spaces per level
 		
 		// this level is ...
-		NSString *str_class = NSStringFromClass(node.class);
+		NSString *str_class = NSStringFromClass([node class]);
 //		MyLog(@"%@class = %@", indent, str_class);
 //		[append appendFormat:@"%@%@\n", indent, str_class];
 		
