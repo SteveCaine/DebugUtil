@@ -50,25 +50,25 @@ static NSString *str_indent(NSUInteger deep, const unichar *buffer, NSUInteger l
 #pragma clang diagnostic pop// returns mutable string of -deep- tabs
 
 static void str_types_tree(id node, NSMutableString *append, NSUInteger deep) {
-	if (node != nil /*&& append != nil*/ && [append isKindOfClass:[NSMutableString class]]) {
+	if (node != nil /*&& append != nil*/ && [append isKindOfClass:NSMutableString.class]) {
 //		NSString *indent = str_tabs(deep);
 		NSString *indent = str_spaces(2 * deep); // 2 spaces per level
 		
 		// this level is ...
-		NSString *str_class = NSStringFromClass([node class]);
+		NSString *str_class = NSStringFromClass(node.class);
 //		MyLog(@"%@class = %@", indent, str_class);
 //		[append appendFormat:@"%@%@\n", indent, str_class];
 		
 		// next level is ...
-		if ([node isKindOfClass:[NSArray class]]) {
+		if ([node isKindOfClass:NSArray.class]) {
 			[append appendFormat:@"%@%@[%i]\n", indent, str_class, (int)[(NSArray *)node count]];
 			for (id subnode in (NSArray *)node) {
 				str_types_tree(subnode, append, 1+deep);
 			}
 		}
-		else if ([node isKindOfClass:[NSDictionary class]]) {
+		else if ([node isKindOfClass:NSDictionary.class]) {
 			NSArray *keys = [(NSDictionary *)node allKeys];
-			[append appendFormat:@"%@%@{%i}\n", indent, str_class, (int)[keys count]];
+			[append appendFormat:@"%@%@{%i}\n", indent, str_class, (int)keys.count];
 			for (NSString *key in keys) {
 				id subnode = [(NSDictionary *)node objectForKey:key];
 #if !CONFIG_justTypes
@@ -78,7 +78,7 @@ static void str_types_tree(id node, NSMutableString *append, NSUInteger deep) {
 			}
 		}
 		// else no more levels here
-		if ([node isKindOfClass:[NSString class]])
+		if ([node isKindOfClass:NSString.class])
 #if CONFIG_justTypes
 			[append appendFormat:@"%@%@ = '%@'\n", indent, str_class, (NSString *)node];
 #else
