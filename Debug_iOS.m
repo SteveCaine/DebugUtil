@@ -29,7 +29,7 @@ NSString *str_AppState(UIApplicationState state) {
 			result = @"background";
 			break;
 		default:
-			result = [NSString stringWithFormat:@"?state? = %i", (int) state];
+			result = [NSString stringWithFormat:@"?state? = %lu", state];
 			break;
 	}
 	return result;

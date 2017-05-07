@@ -61,7 +61,7 @@ NSString *str_device_OS_UDID() {
 		case UIUserInterfaceIdiomPhone: str_idiom = @"Phone";	break;
 		case UIUserInterfaceIdiomPad:	str_idiom = @"Pad";		break;
 		default:
-			str_idiom = [NSString stringWithFormat:@"??? (%i)", (int)idiom];
+			str_idiom = [NSString stringWithFormat:@"??? (%lu)", idiom];
 			break;
 	}
 	[result appendFormat:@"\nname = '%@', idiom = '%@'", name, str_idiom];
