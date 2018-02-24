@@ -18,7 +18,7 @@
 
 // ----------------------------------------------------------------------
 NSString *str_AppState(UIApplicationState state);
-NSString *str_curAppState();
+NSString *str_curAppState(void);
 // ----------------------------------------------------------------------
 NSString *str_CGPoint(CGPoint p);
 NSString *str_CGSize(CGSize s);

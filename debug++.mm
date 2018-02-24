@@ -49,6 +49,8 @@ StFuncLogger::~StFuncLogger()
 }
 int StFuncLogger::d_deep = -1;
 
+#ifdef __OBJC__
+#ifdef UIKIT_EXTERN
 // ----------------------------------------------------------------------
 #pragma mark -
 // ----------------------------------------------------------------------
@@ -366,7 +368,10 @@ std::ostream& operator<<(std::ostream& out, const dNSFetchedResultsChangeType& d
 	}
 	return out;
 }
-#endif
+#endif // #if CONFIG_usingCoreData
+// ----------------------------------------------------------------------
+#endif // #ifdef UIKIT_EXTERN
+#endif // #ifdef __OBJC__
 // ----------------------------------------------------------------------
 #endif // #ifdef _DEBUG
 // ----------------------------------------------------------------------

@@ -39,14 +39,14 @@
 // ----------------------------------------------------------------------
 // ALWAYS
 // ----------------------------------------------------------------------
-NSString *str_AppName();
-NSString *str_AppDisplayName();
-NSString *str_iOS_version();
-NSString *str_device_OS_UDID();
+NSString *str_AppName(void);
+NSString *str_AppDisplayName(void);
+NSString *str_iOS_version(void);
+NSString *str_device_OS_UDID(void);
 // ----------------------------------------------------------------------
-NSString *str_AppPath();
-NSString *str_DocumentsPath();
-NSString *str_CachePath();
+NSString *str_AppPath(void);
+NSString *str_DocumentsPath(void);
+NSString *str_CachePath(void);
 // ----------------------------------------------------------------------
 NSArray* propertyNamesForObject(NSObject *obj);
 // ----------------------------------------------------------------------

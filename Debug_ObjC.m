@@ -30,23 +30,23 @@ void MyLog2(NSString *msg) {
 // ALWAYS
 // ----------------------------------------------------------------------
 
-NSString *str_AppName() {
+NSString *str_AppName(void) {
 	NSString * const key_CFBundleName = @"CFBundleName";
 	NSString *result = [NSBundle.mainBundle.infoDictionary objectForKey:key_CFBundleName];
 	return result;
 }
 
-NSString *str_AppDisplayName() {
+NSString *str_AppDisplayName(void) {
 	NSString * const key_CFBundleDisplayName = @"CFBundleDisplayName";
 	NSString *result = [NSBundle.mainBundle.infoDictionary objectForKey:key_CFBundleDisplayName];
 	return result;
 }
 
-NSString *str_iOS_version() { // "7.1", "8.0", etc.
+NSString *str_iOS_version(void) { // "7.1", "8.0", etc.
 	return [UIDevice.currentDevice systemVersion];
 }
 
-NSString *str_device_OS_UDID() {
+NSString *str_device_OS_UDID(void) {
 	NSMutableString *result = NSMutableString.string;
 	
 	NSString *model = [UIDevice.currentDevice model];
@@ -75,18 +75,18 @@ NSString *str_device_OS_UDID() {
 
 // ----------------------------------------------------------------------
 
-NSString *str_AppPath() {
+NSString *str_AppPath(void) {
 	NSBundle *mailBundle = NSBundle.mainBundle;
 	NSString *resourcePath = mailBundle.resourcePath;
 	return resourcePath;
 }
 
-NSString *str_DocumentsPath() {
+NSString *str_DocumentsPath(void) {
 	NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
 	return paths.firstObject;
 }
 
-NSString *str_CachePath() {
+NSString *str_CachePath(void) {
 	NSArray *paths = NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES);
 	return paths.firstObject;
 }

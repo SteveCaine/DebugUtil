@@ -101,6 +101,7 @@ std::ostream& operator<<(std::ostream& out, const NSDictionary& d);
 
 #endif
 
+#ifdef __COREFOUNDATION__ // __OBJC__
 // ----------------------------------------------------------------------
 // NestedArray is a category on NSArray to help manage the content of table views
 // where each element in the array is an array itself;
@@ -139,5 +140,6 @@ std::ostream& operator<<(std::ostream& out, const dNSFetchedResultsChangeType& d
 
 #endif // #if CONFIG_usingCoreData
 // ----------------------------------------------------------------------
+#endif // #ifdef __COREFOUNDATION__ // __OBJC__
 
 #endif // H_debug_pp

@@ -35,7 +35,7 @@ NSString *str_AppState(UIApplicationState state) {
 	return result;
 }
 
-NSString *str_curAppState() {
+NSString *str_curAppState(void) {
 	UIApplication *app = UIApplication.sharedApplication;
 	return str_AppState(app.applicationState);
 }
